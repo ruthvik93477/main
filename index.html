@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="icon" href="logo.jpeg" style="border-radius: 25px;">
+    <style>
+        body{
+            background-image: linear-gradient(to right, #db85a0,#b396b0,#b396b0,rgb(126, 126, 210));
+        }
+        .try{
+            margin-bottom: 45px;
+            margin-top: 40px;
+            width: 150px;
+            height: 50px;
+        }
+        .try:hover{
+            height: 50px;
+            width: 200px;
+            border: none;
+            border-radius: 20px;
+        }
+        .searchButton{
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-warning text-center mb-2"><i>Leave Tracker</i></h1>
+    <div class="text-end me-5">
+        <a href="http://localhost:5000/"><button class="btn btn-danger searchButton"><b>Delete</b></button></a>
+        <a href="http://localhost:4000/"><button class="btn btn-dark searchButton"><b>Search</b></button></a>
+    </div>
+    <form class="col g-3 needs-validation" novalidate id="dataForm" action="/submit" method="post">
+        <div class="d-flex">
+            <div class="row-md-4 p-2 text-start w-50">
+                <label for="cn" class="form-label ms-2"><b class="text-danger star">* </b><b>Company Name</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control move" id="cn" name="cn" required placeholder="Please enter your Client name">
+                    <div class="invalid-feedback ms-1">
+                        <h6>Company name is required</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start w-50">
+                <label for="clientName" class="form-label ms-2"><b class="text-danger star">* </b><b>Client Name</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control move" id="clientName" name="clientName" required placeholder="Please enter your client name">
+                    <div class="invalid-feedback ms-1">
+                        <h6>Client Name is required</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-md-4 p-2 text-start w-50">
+            <label for="name" class="form-label ms-2"><b class="text-danger star">* </b><b>Name</b></label>
+            <div class="input-group has-validation">
+                <input type="text" class="form-control move" id="name" name="name" required placeholder="Please enter your Name">
+                <div class="invalid-feedback ms-1">
+                    <h6>Client Name is required</h6>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mb-3">
+            <div class="row-md-4 p-2 text-start w-50">
+                <label for="cf" class="form-label ms-2"><b class="text-danger star">* </b><b>Carry Forward leaves</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control move" id="cf" name="cf" required placeholder="Please enter your carry forward leaves">
+                    <div class="invalid-feedback ms-1">
+                        <h6>This field is required</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start w-50">
+                <label for="ml" class="form-label ms-2"><b class="text-danger star">* </b><b>Medical Leaves</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control move" id="ml" name="ml" required placeholder="Please enter your medical leaves">
+                    <div class="invalid-feedback ms-1">
+                        <h6>This field is required</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-light ms-3"><i>Annual Leaves</i></h3>
+        <div class="d-flex">
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="jan" class="form-label ms-2"><b>January</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="jan" name="jan" placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="feb" class="form-label ms-2"><b>February</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="feb" name="feb"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="mar" class="form-label ms-2"><b>March</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="mar" name="mar"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="apr" class="form-label ms-2"><b>April</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="apr" name="apr"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="may" class="form-label ms-2"><b>May</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="may" name="may"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="jun" class="form-label ms-2"><b>June</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="jun" name="jun"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="jul" class="form-label ms-2"><b>July</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="jul" name="jul"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="aug" class="form-label ms-2"><b>August</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="aug" name="aug"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="sep" class="form-label ms-2"><b>September</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="sep" name="sep"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="oct" class="form-label ms-2"><b>October</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="oct" name="oct"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="nov" class="form-label ms-2"><b>November</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="nov" name="nov"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="dec" class="form-label ms-2"><b>December</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="dec" name="dec"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+        </div>
+        <h3 class="text-light ms-3 mt-4"><i>Medical Leaves</i></h3>
+        <div class="d-flex">
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="jan-ml" class="form-label ms-2"><b>January</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="jan_ml" name="jan_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="feb_ml" class="form-label ms-2"><b>February</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="feb_ml" name="feb_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="mar_ml" class="form-label ms-2"><b>March</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="mar_ml" name="mar_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="apr_ml" class="form-label ms-2"><b>April</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="apr_ml" name="apr_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="may_ml" class="form-label ms-2"><b>May</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="may_ml" name="may_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="jun_ml" class="form-label ms-2"><b>June</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="jun_ml" name="jun_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="jul_ml" class="form-label ms-2"><b>July</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="jul_ml" name="jul_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="aug_ml" class="form-label ms-2"><b>August</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="aug_ml" name="aug_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="sep_ml" class="form-label ms-2"><b>September</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="sep_ml" name="sep_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="oct_ml" class="form-label ms-2"><b>October</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="oct_ml" name="oct_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="nov_ml" class="form-label ms-2"><b>November</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="nov_ml" name="nov_ml" placeholder="Please enter leaves taken">
+                </div>
+            </div>
+            <div class="row-md-4 p-2 text-start ms-4">
+                <label for="dec_ml" class="form-label ms-2"><b>December</b></label>
+                <div class="input-group has-validation">
+                    <input type="text" value="0" class="form-control move" id="dec_ml" name="dec_ml"  placeholder="Please enter leaves taken">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-danger try" type="submit" onclick="submitAll()" >Submit</button>
+        </div>
+    </form>
+</body>
+<script>
+    (function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+</script>
+<script>
+    $(function(){
+    var keyLeft = 37;
+    var keyRight = 39;
+    var keyUp = 38;
+    var keyDown = 40;
+    $(document).keydown(
+        function(e)
+        {
+            var moves = $(".move");
+            if (e.keyCode == keyRight) {
+                for(i = 0; i <= moves.length; i++) {
+                    if (moves[i] == $(".move:focus").get(0)) {
+                       $(moves[i + 1]).focus();
+                        break;
+                    }
+                }
+            }
+            if (e.keyCode == keyLeft) {
+                for(i = 0; i <= moves.length; i++) {
+                    if (moves[i] == $(".move:focus").get(0)) {
+                       $(moves[i - 1]).focus();
+                        break;
+                    }
+                }
+            }
+            if (e.keyCode == keyDown) {
+                for(i = 0; i <= moves.length; i++) {
+                    if (moves[i] == $(".move:focus").get(0)) {
+                       $(moves[i + 6]).focus();
+                        break;
+                    }
+                }
+            }
+            if (e.keyCode == keyUp) {
+                for(i = 0; i <= moves.length; i++) {
+                    if (moves[i] == $(".move:focus").get(0)) {
+                       $(moves[i - 6]).focus();
+                        break;
+                    }
+                }
+            }
+        }
+    );
+});
+</script>
+</html>
